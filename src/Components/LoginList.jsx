@@ -1,61 +1,56 @@
-import React, { useState } from 'react'
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-const LoginList = ({setFormData}) => {
+const LoginList = () => {
+  const [users, setUsers] = useState([]);
+  
+  // Fetch users from json-server on component mount
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/users");
+        setUsers(response.data);
+      } catch (error) {
+        console.error("Error fetching user data", error);
+      }
+    };
 
-    const [users, setUsers] = useState([])
+    fetchUsers();
+  }, []);
 
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="w-full max-w-4xl p-8 bg-white rounded-lg shadow-md">
+        <h2 className="mb-6 text-2xl font-bold">User Registration List</h2>
 
-    const handleEdit = (index) => {
-        setFormData(users[index]);
-      };
-
-    const handleDelete = (index) => {
-        const updatedUsers = users.filter((_, i) => i !== index);
-        setUsers(updatedUsers);
-      };
-    return (
-        <div className="overflow-x-auto">
-      <table className="w-full table-auto border-collapse bg-white shadow-md rounded-lg">
-        <thead>
-          <tr className="bg-gray-200">
-            <th className="px-4 py-2 border">Name</th>
-            <th className="px-4 py-2 border">Email</th>
-            <th className="px-4 py-2 border">Mobile</th>
-            <th className="px-4 py-2 border">Gender</th>
-            <th className="px-4 py-2 border">DOB</th>
-            <th className="px-4 py-2 border">Address</th>
-            <th className="px-4 py-2 border">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user, index) => (
-            <tr key={index} className="text-center">
-              <td className="px-4 py-2 border">{user.name}</td>
-              <td className="px-4 py-2 border">{user.email}</td>
-              <td className="px-4 py-2 border">{user.mobile}</td>
-              <td className="px-4 py-2 border">{user.gender}</td>
-              <td className="px-4 py-2 border">{user.dob}</td>
-              <td className="px-4 py-2 border">{user.address}</td>
-              <td className="px-4 py-2 border space-x-2">
-                <button
-                  onClick={() => handleEdit(index)}
-                  className="px-2 py-1 text-white bg-green-500 rounded"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => handleDelete(index)}
-                  className="px-2 py-1 text-white bg-red-500 rounded"
-                >
-                  Delete
-                </button>
-              </td>
+        {/** Table for displaying users **/}
+        <table className="table-auto w-full border-collapse border border-gray-200">
+          <thead>
+            <tr className="bg-blue-500 text-white">
+              <th className="px-4 py-2 border">Name</th>
+              <th className="px-4 py-2 border">Email</th>
+              <th className="px-4 py-2 border">Mobile</th>
+              <th className="px-4 py-2 border">Gender</th>
+              <th className="px-4 py-2 border">Date of Birth</th>
+              <th className="px-4 py-2 border">Address</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user.id} className="hover:bg-gray-100">
+                <td className="px-4 py-2 border">{user.name}</td>
+                <td className="px-4 py-2 border">{user.email}</td>
+                <td className="px-4 py-2 border">{user.mobile}</td>
+                <td className="px-4 py-2 border">{user.gender}</td>
+                <td className="px-4 py-2 border">{user.dob}</td>
+                <td className="px-4 py-2 border">{user.address}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
-    )
-}
+  );
+};
 
-export default LoginList
+export default LoginList;
