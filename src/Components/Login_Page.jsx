@@ -107,7 +107,7 @@ function LoginPage() {
           color="blue-gray"
           className="mt-6 text-center"
         >
-          Don't have an account?{" "}
+          Dont have an account?{" "}
           <a
             href="/register"
             className="hover:underline font-semibold text-blue-500"
