@@ -98,7 +98,7 @@ function LoginPage() {
             fullWidth
             className="py-2 bg-blue-600"
           >
-            Login
+           <Link to="/dashboard"> Login </Link>
           </Button>
         </form>
         {/* Register Link */}
