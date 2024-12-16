@@ -27,7 +27,7 @@ import RegistrationForm from "./Components/RegistrationForm";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import LoginPage from "./Components/Login_Page";
-import Navbar from "./Components/Navbar";
+// import Navbar from "./Components/Navbar";
 import LoginList from "./Components/LoginList";
 
 const App = () => {

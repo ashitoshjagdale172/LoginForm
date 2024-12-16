@@ -26,6 +26,17 @@
       "address": "Renuka Park Ubale Nagar Wagholi",
       "password": "1234567",
       "confirmPassword": "1234567"
+    },
+    {
+      "id": "fea6",
+      "name": "Narendra Shete",
+      "email": "NarendraShete@education.opticalarc.com",
+      "mobile": "1234567890",
+      "gender": "Male",
+      "dob": "2024-12-16",
+      "address": "sdlkvbsadhbaskd",
+      "password": "abcdefg",
+      "confirmPassword": "abcdefg"
     }
   ]
 }
