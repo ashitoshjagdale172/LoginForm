@@ -15,6 +15,17 @@
       "address": "Renuka Park Ubale Nagar Wagholi",
       "password": "123456",
       "confirmPassword": "123456"
+    },
+    {
+      "id": "5beb",
+      "name": "Ashitosh  Jagdale",
+      "email": "ashitoshjagdale172@gmail.com",
+      "mobile": "0605251039",
+      "gender": "Male",
+      "dob": "2024-12-19",
+      "address": "Renuka Park Ubale Nagar Wagholi",
+      "password": "1234567",
+      "confirmPassword": "1234567"
     }
   ]
 }
