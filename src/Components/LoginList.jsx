@@ -24,9 +24,9 @@ const LoginList = () => {
         <h2 className="mb-6 text-2xl font-bold">User Registration List</h2>
 
         {/** Table for displaying users **/}
-        <table className="table-auto w-full border-collapse border border-gray-200">
+        <table className="w-full border border-collapse border-gray-200 table-auto">
           <thead>
-            <tr className="bg-blue-500 text-white">
+            <tr className="text-white bg-blue-500">
               <th className="px-4 py-2 border">Name</th>
               <th className="px-4 py-2 border">Email</th>
               <th className="px-4 py-2 border">Mobile</th>

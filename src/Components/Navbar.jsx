@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaRegUser } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -9,19 +10,19 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-gray-800 text-white p-4">
-            <div className="container mx-auto flex items-center justify-between">
+        <nav className="p-4 text-white bg-gray-800">
+            <div className="container flex items-center justify-between mx-auto">
                 <div className="text-lg font-bold"></div>
 
 
                 <div className="flex items-center space-x-4">
                     {isLoggedIn ? (
                         <>
-                            <span className="hidden md:block"><FaRegUser />
+                            <span className="md:block hidden"><FaRegUser />
                             </span>
                             <button
                                 onClick={handleLogout}
-                                className="bg-red-500 text-white py-1 px-4 rounded hover:bg-red-600"
+                                className="hover:bg-red-600 px-4 py-1 text-white bg-red-500 rounded"
                             >
                                 Logout
                             </button>
@@ -29,9 +30,9 @@ const Navbar = () => {
                     ) : (
                         <button
                             onClick={() => setIsLoggedIn(true)}
-                            className="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600"
+                            className="hover:bg-blue-600 px-4 py-1 text-white bg-blue-500 rounded"
                         >
-                            Login
+                          <Link to="/"> Login  </Link>
                         </button>
                     )}
                 </div>
