@@ -8,7 +8,7 @@ import RegistrationForm from './Components/RegistrationForm'
 
 import LoginPage from "./Components/Login_Page";
 import Navbar from './Components/Navbar';
-import LoginList from './components/LoginList';
+import LoginList from './Components/LoginList';
 
 
 const App = () => {
